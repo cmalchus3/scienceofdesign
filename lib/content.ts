@@ -41,3 +41,21 @@ export async function getResume(): Promise<ResumeData> {
   const p = path.join(contentDir, 'resume.json');
   return JSON.parse(fs.readFileSync(p, 'utf-8'));
 }
+
+/* ---- Home (Index) content ---- */
+export type HomeData = {
+  hero: {
+    title: string;
+    subhead: string;
+    ctas: { label: string; href: string; variant?: 'contained'|'outlined' }[];
+  };
+  metrics: { label: string; value: string }[];
+  featuredWork: string[]; // slugs in display order
+  process: { name: string; desc: string }[]; // Discover, Design, Develop, Deliver
+  footerCta?: { title: string; sub?: string; primary: { label: string; href: string }; secondary?: { label: string; href: string } };
+};
+
+export async function getHome(): Promise<HomeData> {
+  const p = path.join(contentDir, 'home.json');
+  return JSON.parse(fs.readFileSync(p, 'utf-8'));
+}
