@@ -1,4 +1,4 @@
-import { getWork } from '@/lib/content';
+import data from '@/content/work/hylton.json'
 import { Container, Box, Typography, Chip, Grid, Card, CardContent } from '@mui/material';
 
 export const dynamic = 'force-static';
