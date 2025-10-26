@@ -32,14 +32,24 @@ export type WorkItem = {
   sections?: Section[];
 };
 
+
 export type ResumeData = {
-  header: { name: string; title: string; location: string; phone: string; email: string; links: { label: string; url: string }[] };
+  header: {
+    name: string;
+    title: string;
+    location: string;
+    phone: string;
+    email: string;
+    links: { label: string; url: string }[];
+  };
   summary: string;
   strengths: string[];
   experience: Array<{ title: string; org: string; dates: string; bullets: string[] }>;
   certs: string[];
+  training?: string[];   // ← add this line
   education: string[];
 };
+
 
 /* ===== API ===== */
 export async function getAllWork(): Promise<WorkItem[]> {
