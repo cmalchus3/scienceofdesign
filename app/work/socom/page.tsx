@@ -1,8 +1,9 @@
-// app/work/socom/page.tsx
 import { Container, Box, Typography, Chip, Grid, Card, CardContent, Button, Stack, Divider } from '@mui/material';
 import Link from 'next/link';
-import data from '@/content/work/socom.json';
+import raw from '@/content/work/socom.json';
+import type { WorkItem } from '@/lib/content';
 
+const data = raw as WorkItem;
 export const dynamic = 'force-static';
 
 export default function SocomPage() {
@@ -18,12 +19,12 @@ export default function SocomPage() {
         <Typography variant="body1" sx={{ color: 'text.secondary', mb: 1 }}>{data.summary}</Typography>
         {data.kpis?.length ? (
           <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-            {data.kpis.map((k: string, i: number) => <Chip key={i} label={k} variant="outlined" />)}
+            {data.kpis.map((k, i) => <Chip key={i} label={k} variant="outlined" />)}
           </Stack>
         ) : null}
       </Box>
 
-      {data.sections?.map((sec: any) => (
+      {data.sections?.map((sec) => (
         <Box key={sec.id} sx={{ mb: 4 }}>
           <Typography variant="h2" sx={{ mb: 1 }}>{sec.title}</Typography>
           {sec.body && (
@@ -31,17 +32,15 @@ export default function SocomPage() {
               {sec.body}
             </Typography>
           )}
-
           {sec.artifacts?.length ? (
             <Grid container spacing={2}>
-              {sec.artifacts.map((a: any, i: number) => (
+              {sec.artifacts.map((a, i) => (
                 <Grid key={i} item xs={12} sm={6} md={4}>
                   <Card variant="outlined" aria-label={a.alt}>
                     <CardContent>
                       <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>{a.type}</Typography>
                       <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>{a.caption}</Typography>
-                      <Box sx={{ border: '1px dashed', borderColor: 'divider', height: 140, borderRadius: 2, mb: 1,
-                                 display:'flex', alignItems:'center', justifyContent:'center' }}>
+                      <Box sx={{ border: '1px dashed', borderColor: 'divider', height: 140, borderRadius: 2, mb: 1, display:'flex', alignItems:'center', justifyContent:'center' }}>
                         <Typography variant="caption">{a.src || 'placeholder'}</Typography>
                       </Box>
                       {a.footnote && <Typography variant="caption" sx={{ color: 'text.secondary' }}>{a.footnote}</Typography>}
@@ -51,7 +50,6 @@ export default function SocomPage() {
               ))}
             </Grid>
           ) : null}
-
           <Divider sx={{ mt: 3 }} />
         </Box>
       ))}
@@ -60,7 +58,7 @@ export default function SocomPage() {
         <Box sx={{ mt: 4 }}>
           <Typography variant="h2" sx={{ mb: 1 }}>Downloads</Typography>
           <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-            {data.downloads.map((d: any, i: number) => (
+            {data.downloads.map((d, i) => (
               <Button key={i} component={Link} href={`/${d.file}`} variant="outlined">
                 {d.label}
               </Button>
