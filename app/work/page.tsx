@@ -1,16 +1,27 @@
+// scienceofdesign/app/work/page.tsx
 import Link from 'next/link';
-import { getAllWork } from '@/lib/content';
 import { Container, Box, Typography, Grid, Card, CardContent, Chip, Stack } from '@mui/material';
+
+// Import each case JSON explicitly (ensures order + stable links)
+import mow from '@/content/work/mow.json';
+import fortitude from '@/content/work/fortitude.json';
+import hylton from '@/content/work/hylton.json';
+import makeupmuseum from '@/content/work/makeupmuseum.json';
+import bluerock from '@/content/work/bluerock.json';
+import socom from '@/content/work/socom.json';
+
+const items = [
+  { slug: 'mow', ...mow },
+  { slug: 'fortitude', ...fortitude },
+  { slug: 'hylton', ...hylton },
+  { slug: 'makeupmuseum', ...makeupmuseum },
+  { slug: 'bluerock', ...bluerock },
+  { slug: 'socom', ...socom }
+];
 
 export const dynamic = 'force-static';
 
 export default function WorkPage() {
-  const work = getAllWork() // server file read
-    // Only show the six we care about and in your desired order:
-    .filter(w => ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].includes(w.slug))
-    .sort((a, b) => ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].indexOf(a.slug)
-                  - ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].indexOf(b.slug));
-
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 6 } }}>
       <Box sx={{ mb: 3 }}>
@@ -21,7 +32,7 @@ export default function WorkPage() {
       </Box>
 
       <Grid container spacing={3}>
-        {work.map((item) => (
+        {items.map((item) => (
           <Grid key={item.slug} item xs={12} sm={6} md={4}>
             <Card component={Link as any} href={`/work/${item.slug}`} variant="outlined"
               sx={{ textDecoration: 'none', ':hover': { boxShadow: 3, transform: 'translateY(-2px)' }, transition: 'box-shadow .2s, transform .2s' }}>
@@ -32,7 +43,7 @@ export default function WorkPage() {
                 <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>Role — {item.role}</Typography>
                 {item.kpis?.length ? (
                   <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                    {item.kpis.slice(0, 3).map((k, i) => <Chip key={i} label={k} variant="outlined" />)}
+                    {item.kpis.slice(0, 3).map((k: string, i: number) => <Chip key={i} label={k} variant="outlined" />)}
                   </Stack>
                 ) : null}
                 <Typography variant="body2" sx={{ mt: 1, fontWeight: 600, color: 'primary.main' }}>View case →</Typography>
