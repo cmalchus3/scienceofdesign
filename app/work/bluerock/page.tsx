@@ -1,11 +1,9 @@
-// app/work/bluerock/page.tsx
 import { Container, Box, Typography, Chip, Grid, Card, CardContent, Button, Stack, Divider } from '@mui/material';
 import Link from 'next/link';
 import raw from '@/content/work/bluerock.json';
-import type { WorkItem } from '@/lib/content';  // <-- brings in the optional downloads type
+import type { WorkItem } from '@/lib/content';
 
-const data = raw as WorkItem;                   // <-- cast JSON to WorkItem
-
+const data = raw as WorkItem;
 export const dynamic = 'force-static';
 
 export default function BlueRockPage() {
@@ -42,11 +40,10 @@ export default function BlueRockPage() {
                     <CardContent>
                       <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>{a.type}</Typography>
                       <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>{a.caption}</Typography>
-                      <Box sx={{ border: '1px dashed', borderColor: 'divider', height: 140, borderRadius: 2, mb: 1,
-                                 display:'flex', alignItems:'center', justifyContent:'center' }}>
-                        <Typography variant="caption">{(a as any).src || 'placeholder'}</Typography>
+                      <Box sx={{ border: '1px dashed', borderColor: 'divider', height: 140, borderRadius: 2, mb: 1, display:'flex', alignItems:'center', justifyContent:'center' }}>
+                        <Typography variant="caption">{a.src || 'placeholder'}</Typography>
                       </Box>
-                      {(a as any).footnote && <Typography variant="caption" sx={{ color: 'text.secondary' }}>{(a as any).footnote}</Typography>}
+                      {a.footnote && <Typography variant="caption" sx={{ color: 'text.secondary' }}>{a.footnote}</Typography>}
                     </CardContent>
                   </Card>
                 </Grid>
