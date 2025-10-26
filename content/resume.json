@@ -6,78 +6,117 @@
     "phone": "571-260-3164",
     "email": "christina@scienceofdesign.io",
     "links": [
-      {
-        "label": "Portfolio",
-        "url": "https://scienceofdesign.io/portfolio"
-      },
-      {
-        "label": "LinkedIn",
-        "url": "https://linkedin.com/in/christina-alchus"
-      }
+      { "label": "Portfolio", "url": "https://www.scienceofdesign.io/work" },
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/christina-alchus" },
+      { "label": "Email", "url": "mailto:christina@scienceofdesign.io" }
     ]
   },
-  "summary": "Visionary UX executive with 15+ years leading digital transformation, product design, and UX strategy across enterprise-scale platforms. Proven success aligning user-centered design with product goals, implementing scalable design systems, and driving data-informed prioritization in Agile/DevSecOps environments. Leader of high-performing teams in complex, secure contexts.",
+  "summary": "Visionary UX executive with 15+ years of experience leading digital transformation, product design, and UX strategy across enterprise-scale platforms. Proven success aligning user-centered design with product management goals, implementing scalable design systems, and driving data-informed prioritization in Agile and DevSecOps environments. Adept at leading high-performing teams, enabling AI-adjacent UX strategies, and optimizing enterprise workflows in complex, secure contexts.",
   "strengths": [
     "UX & Product Strategy Alignment",
-    "Cross-Functional Team Leadership",
-    "DevOps Feedback Loops & Governance",
-    "Scalable Design Systems & HCD",
-    "AI-Ready UX & Workflow Automation",
-    "Remote Team Building & SOPs",
-    "Accessibility (508) & Inclusive Design"
+    "Cross-Functional Team Leadership (10+ direct/indirect reports)",
+    "DevOps Feedback Loops & Design Governance",
+    "Scalable Design Systems & HCD Frameworks",
+    "AI-Ready UX: Intelligent Workflow Design & Automation",
+    "Remote Team Building, SOPs, Agile Integration",
+    "Accessibility (508), CX, Inclusive Design Standards"
   ],
   "experience": [
     {
       "title": "Senior UX Engineer",
-      "org": "Omni Federal \u2014 Herndon, VA",
-      "dates": "2025\u2013Current",
+      "org": "Omni Federal — Herndon, VA",
+      "dates": "2025 – Current",
       "bullets": [
-        "Modernizing NGA\u2019s MoW platform; aligning UX with platform outcomes.",
-        "Established UX\u2192DevOps feedback loop; prioritization schema."
+        "Spearheading enterprise-wide UX modernization for NGA’s Map of the World (MoW) platform, aligning strategic vision with modernization and mission outcomes.",
+        "Established a UX-to-DevOps feedback loop and designed a scalable data schema for user-driven prioritization and product decisioning.",
+        "Created and led cross-functional design thinking workshops with stakeholders, resulting in a unifying vision strategy using the “One Thing” framework.",
+        "Developed UX processes, SOPs, and engagement practices in a low-maturity environment, integrating design into Agile and DevSecOps lifecycles.",
+        "Educated senior leadership on UX metrics, feedback systems, and intelligent workflow optimization."
       ]
     },
     {
       "title": "Founder & UX Director",
-      "org": "Pixel Creative Services \u2014 Ashburn, VA",
-      "dates": "2017\u20132024",
+      "org": "Pixel Creative Services — Ashburn, VA",
+      "dates": "2017 – 2024",
       "bullets": [
-        "Led consultancy for enterprise product strategy, design systems, and transformation.",
-        "Managed $5M+ in subcontracts; built distributed team; instituted governance."
+        "Led a UX consultancy supporting enterprise product strategy, design systems, and transformation initiatives for private industry and secure/regulated environments.",
+        "Won and managed $5M+ in subcontracts with full oversight of budgets, subcontractor management, staffing, and compliance.",
+        "Built a distributed team of 10+ UX practitioners; implemented async workflows, mentorship programs, and design governance protocols.",
+        "Delivered modular design systems across 10+ SaaS and internal applications, reducing time-to-launch by 30%.",
+        "Conducted executive stakeholder engagements and journey-mapping workshops across global teams.",
+        "Managed teams of designers and developers across proposals, budgets, schedules, and delivery quality control."
       ]
     },
     {
       "title": "Lead UX Strategist (Subcontracts)",
       "org": "USSOCOM & NGA via Pixel",
-      "dates": "2017\u20132022",
+      "dates": "2017 – 2022",
       "bullets": [
-        "Led platform transformations; executive dashboards and KPI-aligned metrics.",
-        "Built feedback loops and release planning to accelerate adoption."
+        "Led UX for large-scale platform transformations; delivered data-driven, accessible design strategy for 1,000+ end users.",
+        "Created executive dashboards, KPI-aligned UX metrics, and process maps to support product prioritization.",
+        "Built feedback loops and iterative release planning to accelerate MVP-to-scaled feature adoption.",
+        "Partnered with product managers, engineers, and security teams to ensure regulatory compliance and system integration."
       ]
     },
     {
       "title": "Lead UX Engineer",
-      "org": "Adwaiy Tech LLC \u2013 CIA (Contract)",
-      "dates": "2015\u20132016",
+      "org": "Adwaiy Tech LLC — CIA (Contract)",
+      "dates": "2015 – 2016",
       "bullets": [
-        "Modernized UI for legacy apps; accessibility audits; component libraries."
+        "Modernized core UI/UX for legacy apps; led responsive design strategy and accessibility audits.",
+        "Mentored early-career designers and created shared UI components for development teams.",
+        "Implemented research-backed UX improvements that reduced task friction for power users."
       ]
     },
     {
       "title": "Senior UX Strategist",
-      "org": "INCATech \u2013 U.S. Department of State",
+      "org": "INCATech — U.S. Department of State",
       "dates": "2014",
       "bullets": [
-        "Directed Travel.State.gov redesign with measurable accessibility gains."
+        "Directed redesign of Travel.State.gov with measurable improvement to accessibility and performance.",
+        "Created accessible component libraries, stakeholder-facing journey maps, and training documentation."
+      ]
+    },
+    {
+      "title": "Senior UX Engineer",
+      "org": "Salient CRGT — SEC & USPS",
+      "dates": "2014 – 2015",
+      "bullets": [
+        "Introduced UX governance, SOPs, and evaluation systems to legacy organizations adopting digital standards.",
+        "Championed CX alignment with internal IT tools and enterprise workflows."
+      ]
+    },
+    {
+      "title": "UX Subject Matter Expert",
+      "org": "Masslight — Defense Technical Information Center",
+      "dates": "2013 – 2014",
+      "bullets": [
+        "Led redesign of DTIC.mil, reducing content bloat by 75% and launching agency-wide UX playbooks.",
+        "Supported policy change initiatives and implemented SOPs adopted by five development teams."
+      ]
+    },
+    {
+      "title": "Multimedia Designer",
+      "org": "Pixel Creative — Freelance",
+      "dates": "2007 – 2013",
+      "bullets": [
+        "Delivered branding, UI, and marketing solutions for clients including Sony Music, Freegal, and academic publishing firms.",
+        "Managed a small team of developers and visual designers."
       ]
     }
   ],
   "certs": [
-    "NN/g UX Management",
-    "SAFe Agile",
-    "Section 508 Compliance",
+    "Nielsen Norman Group — UX Management Certification",
+    "Scaled Agile, Inc. — SAFe Agile Certification",
+    "Section 508 Accessibility Compliance",
     "Design Thinking Facilitation"
   ],
+  "training": [
+    "Section 508 Accessibility Standards & Testing",
+    "Design Thinking Facilitation & Workshop Methods",
+    "AI/ML Product Design Principles (via DevSecOps feedback systems)"
+  ],
   "education": [
-    "B.S. Psychology, University of Maryland"
+    "B.S. in Psychology, University of Maryland 2015" 
   ]
 }
