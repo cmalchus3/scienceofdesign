@@ -1,41 +1,78 @@
 {
-  "slug": "ngamow",
-  "title": "NGA \u2014 Map of the World (MoW) Modernization",
+  "slug": "mow",
+  "title": "NGA — Map of the World (MoW) Modernization",
   "domain": "Enterprise Geospatial",
   "role": "Senior UX Engineer (manager-level scope)",
   "goal": "Align UX strategy with platform outcomes; provide artifacts that accelerate delivery.",
-  "kpis": [
-    "Task success \u2191 [placeholder]",
-    "Training time \u2193 [placeholder]"
-  ],
-  "summary": "Reimagined task flows, architecture, onboarding, and admin configuration to reduce friction and improve decision speed in a complex multi-team platform.",
+  "kpis": ["Task success ↑ ~X–Y%", "Onboarding time ↓ ~X–Y%", "Roadmap alignment ↑ ~X–Y%", "Support tickets ↓ ~X–Y%"],
+  "summary": "Re-architected flows, IA, onboarding, and admin models; installed an owned feedback path from UX to DevOps for durable prioritization.",
   "sections": [
     {
-      "id": "scope",
-      "title": "Context & Scope",
-      "body": "Enterprise geospatial platform with cross-team dependencies and modernization goals. Led wireframes/flows for core tasks (desktop/mobile, admin/user surfaces), set UX\u2192DevOps feedback path, and introduced a scalable prioritization schema."
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: Senior UX Engineer (manager-level scope)\nDomain: Enterprise Geospatial\nScope: Research, IA, high-fi wireframes, onboarding & admin models, feedback path\nTeam: [X UX, Y PM/Eng squads, Z SMEs]\nTimeframe: [Q#/Year – Q#/Year]"
     },
     {
-      "id": "leadership",
+      "id": "goal-constraints",
+      "title": "Goal & Constraints",
+      "body": "Align UX with platform outcomes, reduce friction across core tasks, and create a durable path for user signals to inform prioritization and roadmapping."
+    },
+    {
+      "id": "what-i-led",
       "title": "What I Led",
-      "body": "\u2022 Designed centralized feedback loop routing user signals to engineering.\\n\u2022 Authored data calls and questionnaires for meaningful, actionable insight.\\n\u2022 Created onboarding wizard and admin theming to focus workspaces on the next workflow.\\n\u2022 Facilitated leadership workshops; introduced outcome scorecards for priority alignment."
+      "body": "• Org & Ops — Cross-team alignment; research instruments (data calls, questionnaires); feedback-loop SOP.\n• Research & Insights — SME interviews; usage pain-point review; onboarding friction analysis.\n• Product & IA — Re-architected IA/navigation; analyst/admin task models; admin theming model.\n• Design & Systems — High-fidelity wireframes; onboarding wizard; embedded guidance patterns.\n• Delivery & Quality — Outcome scorecards; acceptance criteria tied to task outcomes.\n• Stakeholders & Decisions — Vision workshops; prioritization forums; roadmap alignment checkpoints."
     },
     {
-      "id": "results",
-      "title": "Results",
-      "body": "Clearer task pathways and faster alignment on priorities; improved readiness for implementation.",
+      "id": "research",
+      "title": "Research & Discovery",
+      "body": "We created systematic data-collection instruments and consolidated anecdotal pain points into signals usable by product and engineering.",
       "artifacts": [
-        {
-          "type": "Wireframes",
-          "caption": "Core task flows and admin controls",
-          "alt": "Wireframes overview"
-        },
-        {
-          "type": "Decision schema",
-          "caption": "Prioritization/scorecard model",
-          "alt": "Decision schema"
-        }
+        { "type": "Data calls + questionnaire", "caption": "Signals that shape priorities", "alt": "Questionnaire page", "src": "mow_data-calls_questionnaire_v1.png" },
+        { "type": "Feedback loop SOP", "caption": "UX → Dev path", "alt": "Process diagram", "src": "mow_feedback_sop_v1.png" }
       ]
+    },
+    {
+      "id": "mental-models",
+      "title": "Mental Models → IA",
+      "body": "Analyst/admin task models drove a re-architecture of navigation and page hierarchy; themes and onboarding steps reduce cognitive load and ramp time.",
+      "artifacts": [
+        { "type": "Task models", "caption": "Core analyst/admin tasks", "alt": "Task model map", "src": "mow_task-models_v1.png" },
+        { "type": "IA + navigation model", "caption": "Reduced friction across flows", "alt": "IA tree", "src": "mow_ia_nav_v2.png" }
+      ]
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture",
+      "body": "Admin theming lets teams tailor visibility to the work at hand; analyst surfaces emphasize context, lineage, and action.",
+      "artifacts": [
+        { "type": "Admin theming model", "caption": "Role-/task-focused visibility", "alt": "Theme model diagram", "src": "mow_admin_theme-model_v1.png" }
+      ]
+    },
+    {
+      "id": "prototypes",
+      "title": "Prototypes (Hi-Fi)",
+      "body": "Key flows across analyst and admin surfaces, an onboarding wizard, and contextual help patterns embedded in complex workflows.",
+      "artifacts": [
+        { "type": "Analyst flows (hi-fi)", "caption": "Core task pathways", "alt": "Hi-fi flow screens", "src": "mow_hifi_flows_analyst_v2.png" },
+        { "type": "Onboarding wizard", "caption": "First-run setup", "alt": "Wizard screens", "src": "mow_onboarding_wizard_v1.png" }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operating Mechanisms",
+      "body": "Outcome scorecards, decision memos, and an explicitly owned feedback path tie releases to measurable improvements rather than output volume.",
+      "artifacts": [
+        { "type": "Outcome scorecards", "caption": "Leadership visibility", "alt": "Scorecard tiles", "src": "mow_scorecards_v1.png" }
+      ]
+    },
+    {
+      "id": "outcomes",
+      "title": "Outcomes",
+      "body": "Clearer task pathways; faster alignment; improved build readiness; reduced friction through embedded guidance.\nRanges: Task success [↑ ~X–Y%] · Onboarding time [↓ ~X–Y%] · Support tickets [↓ ~X–Y%]"
     }
+  ],
+  "downloads": [
+    { "label": "Wireframes (redacted)", "file": "mow_wireframes_redacted_v1.pdf" },
+    { "label": "Specs bundle", "file": "mow_specs_v1.zip" }
   ]
 }
