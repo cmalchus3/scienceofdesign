@@ -102,3 +102,231 @@ export default async function Home() {
           <Grid item xs={12} sm={6} md={3}><StatTile label="Time-to-value" value="↓ [placeholder]" /></Grid>
           <Grid item xs={12} sm={6} md={3}><StatTile label="Ramp time" value="↓ [placeholder]" /></Grid>
           <Grid item xs={12} sm={6} md={3}><StatTile label="Release quality" value="↑ [placeholder]" /></Grid>
+        </Grid>
+      </Box>
+
+      {/* Spotlight Cases */}
+      <Box component="section" aria-labelledby="spotlight-heading" sx={{ mb: 5 }}>
+        <Typography id="spotlight-heading" variant="h2" sx={{ mb: .5 }}>
+          Spotlight Cases
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Featured projects showcasing measurable impact and strategic design thinking across diverse industries.
+        </Typography>
+
+        <Grid container spacing={3}>
+          {spotlight.map((item) => (
+            <Grid key={item.slug} item xs={12} sm={6} md={4}>
+              <Card component={Link as any} href={`/work/${item.slug}`} variant="outlined"
+                sx={{
+                  textDecoration: 'none',
+                  ':hover': { boxShadow: 3, transform: 'translateY(-2px)' },
+                  transition: 'box-shadow .2s, transform .2s'
+                }}>
+                <CardContent>
+                  <Chip size="small" label={item.domain} sx={{ mb: 1, bgcolor: 'info.main', color: 'text.primary' }} />
+                  <Typography variant="h3" sx={{ mb: .5 }}>{item.title}</Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>
+                    {item.goal}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>
+                    Role — {item.role}
+                  </Typography>
+                  {item.kpis?.length ? (
+                    <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ mb: 1 }}>
+                      {item.kpis.slice(0, 2).map((k, i) => <Chip key={i} label={k} variant="outlined" />)}
+                    </Stack>
+                  ) : null}
+                  <Typography variant="body2" sx={{ mt: .5, fontWeight: 600, color: 'primary.main' }}>
+                    View case →
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      {/* Leadership Across Industries */}
+      <Box component="section" aria-labelledby="industries-heading" sx={{ mb: 5 }}>
+        <Typography id="industries-heading" variant="h2" sx={{ mb: .5 }}>
+          Leadership Across Industries
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Work across education, culture, enterprise geospatial, internal tools, and B2B web—delivered directly
+          and via partners in secure/regulated environments.
+        </Typography>
+        <Box role="list" sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+          {['Education', 'Culture', 'Geospatial', 'Internal Tools', 'B2B Web', 'Secure / Regulated'].map((t) => (
+            <Chip key={t} role="listitem" label={t} />
+          ))}
+        </Box>
+      </Box>
+
+      {/* Skills & Expertise */}
+      <Box component="section" aria-labelledby="skills-heading" sx={{ mb: 5 }}>
+        <Typography id="skills-heading" variant="h2" sx={{ mb: .5 }}>
+          Skills & Expertise
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Comprehensive skill set spanning design strategy, team leadership, and technical implementation.
+        </Typography>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6}>
+            <SkillBlock
+              title="Design Strategy"
+              items={['Product vision', 'Design systems', 'User research', 'Information architecture']}
+              Icon={DesignServices}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <SkillBlock
+              title="Team Leadership"
+              items={['Cross-functional teams', 'Agile methods', 'Stakeholder management', 'Mentoring & growth']}
+              Icon={Hub}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <SkillBlock
+              title="Technical Skills"
+              items={['Prototyping', 'Design tools', 'Frontend basics', 'API integration']}
+              Icon={IntegrationInstructions}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <SkillBlock
+              title="Data & Analytics"
+              items={['User analytics', 'A/B testing', 'Performance metrics', 'ROI measurement']}
+              Icon={Assessment}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Design Process & Methods */}
+      <Box component="section" aria-labelledby="process-heading" sx={{ mb: 5 }}>
+        <Typography id="process-heading" variant="h2" sx={{ mb: .5 }}>
+          Design Process & Methods
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Systematic approach to solving complex design challenges with measurable outcomes.
+        </Typography>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={3}>
+            <ProcessStep
+              step="Step 1"
+              title="Discover"
+              body="Interviews, data gathering, competitive analysis, and stakeholder alignment to understand the problem space."
+              Icon={Science}
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <ProcessStep
+              step="Step 2"
+              title="Design"
+              body="Journey maps, IA, and iterative UX exploration; patterns and systems that clarify tasks and reduce friction."
+              Icon={Architecture}
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <ProcessStep
+              step="Step 3"
+              title="Develop"
+              body="Partner closely with engineering; component libraries; acceptance criteria that encode accessibility and quality."
+              Icon={Build}
+            />
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <ProcessStep
+              step="Step 4"
+              title="Deliver"
+              body="Implementation support, usability testing, telemetry, and KPI tracking to prove outcomes and guide iteration."
+              Icon={RocketLaunch}
+            />
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Tools & Technologies */}
+      <Box component="section" aria-labelledby="tools-heading" sx={{ mb: 5 }}>
+        <Typography id="tools-heading" variant="h2" sx={{ mb: .5 }}>
+          Tools & Technologies
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Proficient in industry-standard and emerging tools for comprehensive design solutions.
+        </Typography>
+
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card variant="outlined">
+              <CardContent>
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <Layers fontSize="small" aria-hidden />
+                  <Typography variant="subtitle2">Design</Typography>
+                </Stack>
+                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                  {['Figma', 'FigJam', 'Sketch', 'Adobe'].map((t) => <Chip key={t} label={t} variant="outlined" />)}
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card variant="outlined">
+              <CardContent>
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <QueryStats fontSize="small" aria-hidden />
+                  <Typography variant="subtitle2">Research</Typography>
+                </Stack>
+                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                  {['Miro', 'UserTesting', 'Hotjar', 'Maze'].map((t) => <Chip key={t} label={t} variant="outlined" />)}
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card variant="outlined">
+              <CardContent>
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <Timeline fontSize="small" aria-hidden />
+                  <Typography variant="subtitle2">Delivery</Typography>
+                </Stack>
+                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                  {['Jira', 'Storybook', 'Material UI', 'React'].map((t) => <Chip key={t} label={t} variant="outlined" />)}
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <Card variant="outlined">
+              <CardContent>
+                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+                  <Insights fontSize="small" aria-hidden />
+                  <Typography variant="subtitle2">Analytics</Typography>
+                </Stack>
+                <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                  {['A/B testing', 'Performance', 'ROI', 'User analytics'].map((t) => <Chip key={t} label={t} variant="outlined" />)}
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Divider sx={{ my: 4 }} />
+
+      {/* CTA */}
+      <Box component="section" aria-labelledby="cta-heading">
+        <Typography id="cta-heading" variant="h2" sx={{ mb: .5 }}>Ready to collaborate?</Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
+          Let’s discuss how strategic design can drive measurable impact for your product.
+        </Typography>
+        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+          <Button component={Link} href="/contact" variant="contained">Start a Conversation</Button>
+          <Button component={Link} href="/work" variant="outlined" color="secondary">View All Projects</Button>
+        </Stack>
+      </Box>
+    </Container>
+  );
+}
