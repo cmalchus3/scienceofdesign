@@ -1,10 +1,19 @@
+// scienceofdesign/lib/content.ts
 import fs from 'node:fs';
 import path from 'node:path';
 
+// Your repo root already has /content at the top level
 const contentDir = path.join(process.cwd(), 'content');
 
-export type Artifact = { type: string; caption: string; alt: string; src?: string };
-export type Section = { id: string; title: string; body: string; artifacts?: Artifact[] };
+function readJSON<T>(...segments: string[]): T {
+  const p = path.join(contentDir, ...segments);
+  return JSON.parse(fs.readFileSync(p, 'utf-8')) as T;
+}
+
+/* ===== Types ===== */
+export type Artifact = { type: string; caption: string; alt: string; src?: string; footnote?: string };
+export type Section = { id: string; title: string; body?: string; artifacts?: Artifact[] };
+
 export type WorkItem = {
   slug: string;
   title: string;
@@ -13,22 +22,39 @@ export type WorkItem = {
   goal: string;
   kpis?: string[];
   summary?: string;
+  overview?: {
+    domain?: string;
+    scope?: string;
+    team?: string;
+    timeframe?: string;
+    notes?: string;
+  };
+  downloads?: { label: string; file: string }[];
   sections?: Section[];
 };
 
-export function getWork(slug: string): WorkItem {
-  const p = path.join(contentDir, 'work', `${slug}.json`);
-  if (!fs.existsSync(p)) throw new Error(`Missing work JSON: ${slug}.json`);
-  return JSON.parse(fs.readFileSync(p, 'utf-8'));
-}
+export type ResumeData = {
+  header: { name: string; title: string; location: string; phone: string; email: string; links: { label: string; url: string }[] };
+  summary: string;
+  strengths: string[];
+  experience: Array<{ title: string; org: string; dates: string; bullets: string[] }>;
+  certs: string[];
+  education: string[];
+};
 
-export function getAllWork(): WorkItem[] {
+/* ===== API ===== */
+export async function getAllWork(): Promise<WorkItem[]> {
   const dir = path.join(contentDir, 'work');
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
-  return files.map((f) => {
-    const item = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf-8'));
-    // Ensure slug matches filename (without .json)
-    const slug = f.replace(/\.json$/, '');
-    return { slug, ...item };
-  });
+  return files.map((f) => readJSON<WorkItem>('work', f));
+}
+
+export async function getWorkBySlug(slug: string): Promise<WorkItem | null> {
+  const p = path.join(contentDir, 'work', `${slug}.json`);
+  if (!fs.existsSync(p)) return null;
+  return readJSON<WorkItem>('work', `${slug}.json`);
+}
+
+export async function getResume(): Promise<ResumeData> {
+  return readJSON<ResumeData>('resume.json');
 }
