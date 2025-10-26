@@ -1,41 +1,78 @@
 {
-  "slug": "makeup-museum",
-  "title": "Makeup Museum \u2014 Content & Inventory System Modernization",
+  "slug": "makeupmuseum",
+  "title": "Makeup Museum — Content & Inventory System Modernization",
   "domain": "Cultural / CMS",
   "role": "UX & Product Design (platform re-architecture + branding refresh)",
   "goal": "Unify CMS, inventory, and storytelling to support exhibits and e-commerce expansion.",
-  "kpis": [
-    "Publishing errors \u2193 [placeholder]",
-    "Time-to-publish \u2193 [placeholder]"
-  ],
+  "kpis": ["Time-to-publish ↓ ~X–Y%", "Publish errors ↓ ~X–Y%", "Story views ↑ ~X–Y%", "Brand consistency ↑ ~X–Y%"],
   "summary": "Object-based content model, reusable templates, editorial workflow (roles/permissions, publish gates), asset standards, and brand refinements.",
   "sections": [
     {
-      "id": "approach",
-      "title": "Approach",
-      "body": "Defined object model; IA; editorial workflow with publish gates; asset standards; brand refresh to support commerce."
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: UX & Product Design (platform re-architecture + branding refresh)\nDomain: Culture, Collections, Editorial\nScope: CMS + inventory model, editorial workflow, templates, brand refinement\nTeam: [X UX, Y eng, Z editorial]\nTimeframe: [Q#/Year – Q#/Year]"
     },
     {
-      "id": "lead",
+      "id": "goal-constraints",
+      "title": "Goal & Constraints",
+      "body": "Create a single source of truth for content and collection inventory to support exhibits and future commerce—without interrupting live operations or editorial cadence."
+    },
+    {
+      "id": "what-i-led",
       "title": "What I Led",
-      "body": "\u2022 Client acquisition, scope/budget/timeline; technical feasibility and stack choices.\\n\u2022 IA and inventory design; design quality control; design + build supervision."
+      "body": "• Org & Ops — Proposal, scope, timeline, budget, staffing; coordination with engineering leadership.\n• Research & Insights — Editorial interviews; inventory audits; workflow shadowing; stack feasibility sessions.\n• Product & IA — Object model (Artifact / Exhibit / Story / Event); taxonomy; CMS field specifications.\n• Design & Systems — Template kit (landing / story / collection); design system starter; brand refinements.\n• Delivery & Quality — Backend service design planning/validation; implementation specs; QA checklist; a11y standards.\n• Stakeholders & Decisions — Editorial/engineering decision forums; release gates; publish policy adoption."
+    },
+    {
+      "id": "research",
+      "title": "Research & Discovery",
+      "body": "We captured editorial needs, audited inventory/meta hygiene, and tested stack options to reconcile authoring speed, asset consistency, and technical constraints.",
+      "artifacts": [
+        { "type": "Editorial interview notes", "caption": "Workflow needs and pain points", "alt": "Interview notes board", "src": "makeup_research_editorial-interviews_v1.png" },
+        { "type": "Inventory audit", "caption": "Assets, metadata, duplication", "alt": "Inventory audit visualization", "src": "makeup_inventory_audit_v1.png" }
+      ]
+    },
+    {
+      "id": "mental-models",
+      "title": "Mental Models → Content Architecture",
+      "body": "We defined key entities and relationships, validated public labels, and mapped editorial units to reusable templates to reduce production time and errors.",
+      "artifacts": [
+        { "type": "Object model", "caption": "Artifact / Exhibit / Story / Event", "alt": "Entity relationship diagram", "src": "makeup_mental-models_objects_v1.png" },
+        { "type": "Public taxonomy tree", "caption": "Labels validated with quick tests", "alt": "Taxonomy tree graphic", "src": "makeup_taxonomy_tree_v1.png" }
+      ]
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture",
+      "body": "Navigation and taxonomy connect collection objects to stories and events; CMS field specs enforce predictable authoring and asset reuse.",
+      "artifacts": [
+        { "type": "CMS field specs (excerpt)", "caption": "Normalized fields and validation", "alt": "Field spec table", "src": "makeup_cms_field-specs_v1.png" }
+      ]
+    },
+    {
+      "id": "prototypes",
+      "title": "Prototypes (Lo-Fi → Hi-Fi)",
+      "body": "We delivered admin/editor screens (mobile-aware) and public templates with responsive image handling and media guidelines.",
+      "artifacts": [
+        { "type": "Admin/editor wires", "caption": "Roles and gates visible in UI", "alt": "Admin wireframes", "src": "makeup_admin_wires_v1.png" },
+        { "type": "Public templates", "caption": "Story + collection layouts", "alt": "Template thumbnails", "src": "makeup_public_templates_v1.png" }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operating Mechanisms",
+      "body": "Roles/permissions, publish gates, asset standards, and an editorial calendar with QA checklists keep production steady and on-brand.",
+      "artifacts": [
+        { "type": "Workflow/RACI + gates", "caption": "Who does what, when", "alt": "RACI diagram", "src": "makeup_workflow_raci_v1.png" }
+      ]
     },
     {
       "id": "outcomes",
       "title": "Outcomes",
-      "body": "Faster story assembly from collection objects, fewer publishing errors, brand-consistent pages, commerce-ready.",
-      "artifacts": [
-        {
-          "type": "Content model",
-          "caption": "Schemas for objects and relations",
-          "alt": "Content model"
-        },
-        {
-          "type": "Templates",
-          "caption": "Reusable landing/story templates",
-          "alt": "Templates"
-        }
-      ]
+      "body": "Time-to-publish decreased, error rates fell, and brand uniformity improved across pages; the system is positioned for future commerce.\nRanges: Time-to-publish [↓ ~X–Y%] · Error rate [↓ ~X–Y%] · Story views [↑ ~X–Y%]"
     }
+  ],
+  "downloads": [
+    { "label": "CMS specs (redacted)", "file": "makeup_cms-specs_redacted_v1.pdf" },
+    { "label": "Template kit", "file": "makeup_templates_v1.zip" }
   ]
 }
