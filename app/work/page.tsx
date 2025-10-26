@@ -1,11 +1,16 @@
-import { getAllWork } from '@/lib/content';
 import Link from 'next/link';
-import { Container, Box, Typography, Grid, Card, CardContent, Chip, Stack, Button } from '@mui/material';
+import { getAllWork } from '@/lib/content';
+import { Container, Box, Typography, Grid, Card, CardContent, Chip, Stack } from '@mui/material';
 
 export const dynamic = 'force-static';
 
-export default async function WorkPage() {
-  const work = await getAllWork();
+export default function WorkPage() {
+  const work = getAllWork() // server file read
+    // Only show the six we care about and in your desired order:
+    .filter(w => ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].includes(w.slug))
+    .sort((a, b) => ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].indexOf(a.slug)
+                  - ['mow','fortitude','hylton','makeupmuseum','bluerock','socom'].indexOf(b.slug));
+
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 3, md: 6 } }}>
       <Box sx={{ mb: 3 }}>
@@ -19,7 +24,7 @@ export default async function WorkPage() {
         {work.map((item) => (
           <Grid key={item.slug} item xs={12} sm={6} md={4}>
             <Card component={Link as any} href={`/work/${item.slug}`} variant="outlined"
-              sx={{ textDecoration: 'none', ':hover': { boxShadow: 3, transform: 'translateY(-2px)' } }}>
+              sx={{ textDecoration: 'none', ':hover': { boxShadow: 3, transform: 'translateY(-2px)' }, transition: 'box-shadow .2s, transform .2s' }}>
               <CardContent>
                 <Chip size="small" label={item.domain} sx={{ mb: 1, bgcolor: 'info.main', color: 'text.primary' }} />
                 <Typography variant="h3" sx={{ mb: .5 }}>{item.title}</Typography>
@@ -36,10 +41,6 @@ export default async function WorkPage() {
           </Grid>
         ))}
       </Grid>
-
-      <Box sx={{ mt: 6 }}>
-        <Button component={Link} href="/resume" variant="outlined" color="secondary">View Résumé</Button>
-      </Box>
     </Container>
   );
 }
