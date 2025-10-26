@@ -1,41 +1,76 @@
 {
-  "slug": "socom-branding",
-  "title": "USSOCOM \u2014 Brand System + App Marketplace & Dashboard Concepts",
+  "slug": "socom",
+  "title": "USSOCOM — Brand System + App Marketplace & Dashboard Concepts",
   "domain": "Identity & Enterprise Concepts",
   "role": "Creative Direction & UX Strategy",
   "goal": "Deliver compliant, legible, and extensible identity; explore developer-centric marketplace and personalized dashboards.",
-  "kpis": [
-    "Reproduction consistency \u2191 [placeholder]",
-    "Onboarding friction \u2193 [placeholder]"
-  ],
+  "kpis": ["Reproduction consistency ↑ ~X–Y%", "Onboarding friction ↓ ~X–Y%"],
   "summary": "Identity refresh under strict standards; vector masters and spec sheets. Concepted app marketplace and user dashboard that centralize tools, access, and knowledge.",
   "sections": [
     {
-      "id": "identity",
-      "title": "Identity System",
-      "body": "Standards audit (color/contrast, reproduction); lockups; digital/print specs; export profiles."
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: Creative Direction & Brand Systems\nDomain: Identity, Standards, Multi-media\nScope: Identity exploration → production assets; multi-media applications\nTeam: [X designers, Y production]\nTimeframe: [Q#/Year – Q#/Year]"
     },
     {
-      "id": "concepts",
-      "title": "Marketplace & Dashboard Concepts",
-      "body": "Developer-forward \u2018one-stop\u2019 experience: app store, access checks, knowledge sharing, support, and personalized workspaces."
+      "id": "goal-constraints",
+      "title": "Goal & Constraints",
+      "body": "Deliver a compliant, legible, extensible identity under strict standards and multi-stakeholder approvals; propose an enablement concept to streamline internal workflows."
     },
     {
-      "id": "deliverables",
-      "title": "Artifacts",
-      "body": "Standards spec, vector masters, export kit; concept screens for marketplace and dashboards.",
+      "id": "what-i-led",
+      "title": "What I Led",
+      "body": "• Org & Ops — Senior stakeholder interviews; approvals cadence; standards governance.\n• Research & Insights — Contrast/legibility testing; substrate/production constraints audit.\n• Product & IA — Identity system rules (primary/secondary lockups; usage scenarios).\n• Design & Systems — Vector masters; export profiles; reproduction specs; enablement platform concept IA (dashboard, app store, knowledge, support).\n• Delivery & Quality — Spec documentation; guidance sheets; application kits (coin/flag/merch/digital).\n• Stakeholders & Decisions — Review boards; compliance sign-offs; downstream adoption guidance."
+    },
+    {
+      "id": "research",
+      "title": "Research & Discovery",
+      "body": "We audited existing standards and real-world reproduction, then set non-negotiables for contrast and fidelity that would scale across print and digital.",
       "artifacts": [
-        {
-          "type": "Brand spec",
-          "caption": "Lockups, color, reproduction",
-          "alt": "Brand spec"
-        },
-        {
-          "type": "Concept screens",
-          "caption": "Marketplace & dashboard",
-          "alt": "Concept screens"
-        }
+        { "type": "Standards + contrast audit", "caption": "Legibility at size", "alt": "Audit sheet", "src": "socom_audit_contrast_v1.png" }
       ]
+    },
+    {
+      "id": "mental-models",
+      "title": "Mental Models → Systemization",
+      "body": "We defined how marks adapt across sizes, materials, and digital contexts, and clarified “when to use what” to avoid drift.",
+      "artifacts": [
+        { "type": "Usage rules matrix", "caption": "Primary/secondary lockups", "alt": "Matrix table", "src": "socom_system_rules_v1.png" }
+      ]
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture (Enablement Concept)",
+      "body": "Mapped an enablement IA: role-based dashboard, app store, systems check, knowledge sharing, support pathways, and personalized workspaces.",
+      "artifacts": [
+        { "type": "Enablement IA", "caption": "Platform concept", "alt": "IA diagram", "src": "socom_platform_ia_v1.png" }
+      ]
+    },
+    {
+      "id": "prototypes",
+      "title": "Prototypes",
+      "body": "Lockup explorations, contrast tests, and export profiles; concept flows for dashboard and catalog interactions.",
+      "artifacts": [
+        { "type": "Lockups", "caption": "Exploration to final", "alt": "Lockup board", "src": "socom_lockups_v1.png" },
+        { "type": "Export profiles", "caption": "Digital and print kits", "alt": "Export sheet", "src": "socom_export_profiles_v1.png" }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operating Mechanisms",
+      "body": "Usage guardrails, export profiles, and reproduction specs turn standards into repeatable practice.",
+      "artifacts": [
+        { "type": "Usage guardrails", "caption": "Do/Don’t references", "alt": "Guardrails page", "src": "socom_usage_guardrails_v1.png" }
+      ]
+    },
+    {
+      "id": "outcomes",
+      "title": "Outcomes",
+      "body": "Consistent, standards-compliant identity with reliable reproduction; clearer enablement pathways via the platform concept.\nRanges: Standards adherence [≥ X%] · Reproduction issues [↓ ~X–Y%]"
     }
+  ],
+  "downloads": [
+    { "label": "Brand spec (redacted)", "file": "socom_brand-spec_redacted_v1.pdf" },
+    { "label": "Master assets", "file": "socom_master-assets_v1.zip" }
   ]
 }
