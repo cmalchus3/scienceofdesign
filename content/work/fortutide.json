@@ -1,304 +1,243 @@
-import { Container, Box, Typography, Chip, Grid, Card, CardContent, Stack, Divider, Button } from '@mui/material';
-import Link from 'next/link';
-import { getWorkBySlug } from '@/lib/content';
-
-export const dynamic = 'force-static';
-
-function KpiTile({ label, value, note }: { label: string; value: string; note?: string }) {
-  return (
-    <Card variant="outlined" sx={{ height: '100%' }}>
-      <CardContent>
-        <Typography variant="h2" sx={{ mb: .5 }}>{value}</Typography>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>{label}</Typography>
-        {note ? <Typography variant="body2" sx={{ color: 'text.secondary', mt: .5 }}>{note}</Typography> : null}
-      </CardContent>
-    </Card>
-  );
-}
-
-function Pill({ children }: { children: React.ReactNode }) {
-  return <Chip label={children} variant="outlined" sx={{ mr: 1, mb: 1 }} />;
-}
-
-export default async function FortutidePage() {
-  const data = await getWorkBySlug('fortutide');
-  if (!data) return null;
-  const d: any = data; // page-specific extended fields
-
-  return (
-    <Container maxWidth="lg" sx={{ py: { xs: 3, md: 6 } }}>
-      {/* HERO */}
-      <Box sx={{ mb: 2 }}>
-        <Chip size="small" label={data.domain} sx={{ bgcolor: 'info.main', color: 'text.primary', mb: 1 }} />
-        <Typography variant="h1" sx={{ mb: 1 }}>{data.title}</Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', maxWidth: 960 }}>{data.summary}</Typography>
-      </Box>
-
-      {/* KPI TILES */}
-      <Grid container spacing={2} sx={{ mt: 1 }}>
-        {data.kpis?.map((k: any, i: number) => (
-          <Grid key={i} item xs={12} sm={6} md={3}><KpiTile label={k.label} value={k.value} note={k.note} /></Grid>
-        ))}
-      </Grid>
-
-      {/* ROLE & SCOPE */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Role & Scope</Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card variant="outlined"><CardContent>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: .5 }}>Role</Typography>
-              <Typography variant="body2">{data.role}</Typography>
-            </CardContent></Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card variant="outlined"><CardContent>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: .5 }}>Domain</Typography>
-              <Typography variant="body2">{data.domain}</Typography>
-            </CardContent></Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card variant="outlined"><CardContent>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: .5 }}>Scope</Typography>
-              <Typography variant="body2">{d.roleScope?.scope}</Typography>
-            </CardContent></Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card variant="outlined"><CardContent>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: .5 }}>Team</Typography>
-              <Typography variant="body2">{d.roleScope?.team}</Typography>
-            </CardContent></Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Card variant="outlined"><CardContent>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: .5 }}>Timeframe</Typography>
-              <Typography variant="body2">{d.roleScope?.timeframe}</Typography>
-            </CardContent></Card>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* GOAL & CONSTRAINTS */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Goal & Constraints</Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', whiteSpace: 'pre-line' }}>
-          {d.goalConstraints}
-        </Typography>
-      </Box>
-
-      {/* WHAT I LED */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>What I Led</Typography>
-        <Grid container spacing={2}>
-          {d.led?.map((block: any, idx: number) => (
-            <Grid key={idx} item xs={12} md={6}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: 1 }}>{block.title}</Typography>
-                  <Box component="ul" sx={{ pl: 3, m: 0 }}>
-                    {block.items.map((it: string, i: number) => (
-                      <li key={i}><Typography variant="body2" sx={{ mb: .5 }}>{it}</Typography></li>
-                    ))}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* RESEARCH & DISCOVERY */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Research & Discovery</Typography>
-        <Grid container spacing={2}>
-          {d.research?.cards?.map((c: any, i: number) => (
-            <Grid key={i} item xs={12} md={6}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{c.title}</Typography>
-                  {c.meta ? <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1 }}>{c.meta}</Typography> : null}
-                  <Typography variant="body2" sx={{ whiteSpace: 'pre-line', color: 'text.secondary' }}>{c.body}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="h3" sx={{ mb: 1 }}>Key Research Insights</Typography>
-          <Grid container spacing={2}>
-            {d.research?.insights?.map((ins: any, i: number) => (
-              <Grid key={i} item xs={12} md={4}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Typography variant="h3" sx={{ mb: .5 }}>{ins.title}</Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary', whiteSpace: 'pre-line' }}>{ins.body}</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-      </Box>
-
-      {/* MENTAL MODELS → WORKFLOW REDESIGN */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Mental Models → Workflow Redesign</Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>{d.workflow?.intro}</Typography>
-        <Grid container spacing={2}>
-          {d.workflow?.cards?.map((c: any, i: number) => (
-            <Grid key={i} item xs={12} md={6}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{c.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', whiteSpace: 'pre-line' }}>{c.body}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* INFORMATION ARCHITECTURE */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Information Architecture</Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>{d.ia?.intro}</Typography>
-        <Grid container spacing={2}>
-          {d.ia?.blocks?.map((b: any, i: number) => (
-            <Grid key={i} item xs={12} md={4}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{b.title}</Typography>
-                  <Box component="ul" sx={{ pl: 3, m: 0 }}>
-                    {b.items.map((it: string, idx: number) => (
-                      <li key={idx}><Typography variant="body2" sx={{ mb: .5 }}>{it}</Typography></li>
-                    ))}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* PROTOTYPES */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Prototypes (Lo-Fi → Hi-Fi)</Typography>
-        <Grid container spacing={2}>
-          {d.prototypes?.map((p: any, i: number) => (
-            <Grid key={i} item xs={12} md={4}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{p.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>{p.body}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* OPERATING MECHANISMS */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Operating Mechanisms</Typography>
-        <Grid container spacing={2}>
-          {d.ops?.map((c: any, i: number) => (
-            <Grid key={i} item xs={12} md={6}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{c.title}</Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary', whiteSpace: 'pre-line' }}>{c.body}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* MEASURABLE OUTCOMES */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Measurable Outcomes</Typography>
-        <Grid container spacing={2}>
-          {d.outcomes?.metrics?.map((m: any, i: number) => (
-            <Grid key={i} item xs={12} sm={6} md={3}>
-              <KpiTile label={m.label} value={m.value} note={m.note} />
-            </Grid>
-          ))}
-        </Grid>
-        {d.outcomes?.secondary?.length ? (
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="h3" sx={{ mb: 1 }}>Secondary Impact Metrics</Typography>
-            <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-              {d.outcomes.secondary.map((s: any, i: number) => <Pill key={i}>{s}</Pill>)}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-
-      {/* ARTIFACTS */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>All Artifacts (Gallery & Downloads)</Typography>
-        <Grid container spacing={2}>
-          {d.artifacts?.groups?.map((g: any, gi: number) => (
-            <Grid key={gi} item xs={12} md={4}>
-              <Card variant="outlined">
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: 1 }}>{g.title}</Typography>
-                  <Box component="ul" sx={{ pl: 3, m: 0 }}>
-                    {g.items.map((it: string, i: number) => (
-                      <li key={i}><Typography variant="body2" sx={{ mb: .5 }}>{it}</Typography></li>
-                    ))}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-        {d.artifacts?.downloads?.length ? (
-          <Stack direction="row" spacing={2} sx={{ mt: 2 }} useFlexGap flexWrap="wrap">
-            {d.artifacts.downloads.map((dl: any, i: number) => (
-              <Button key={i} component="a" href={dl.href} variant="outlined" color="secondary">{dl.label}</Button>
-            ))}
-          </Stack>
-        ) : null}
-        {d.artifacts?.note ? (
-          <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>{d.artifacts.note}</Typography>
-        ) : null}
-      </Box>
-
-      {/* RELATED */}
-      <Box sx={{ mt: 4 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Related Projects</Typography>
-        <Grid container spacing={2}>
-          {d.related?.map((r: any, i: number) => (
-            <Grid key={i} item xs={12} md={6}>
-              <Card component={Link as any} href={`/work/${r.slug}`} variant="outlined" sx={{ textDecoration: 'none' }}>
-                <CardContent>
-                  <Typography variant="h3" sx={{ mb: .5 }}>{r.title}</Typography>
-                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                    {r.highlights?.map((h: string, hi: number) => <Pill key={hi}>{h}</Pill>)}
-                  </Stack>
-                  <Typography variant="body2" sx={{ mt: 1, fontWeight: 600, color: 'primary.main' }}>View Case →</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      <Divider sx={{ my: 4 }} />
-
-      {/* CTA */}
-      <Box sx={{ textAlign: 'center', mb: 2 }}>
-        <Typography variant="h2" sx={{ mb: 1 }}>Let’s Discuss Your Project</Typography>
-        <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
-          Ready to transform complex workflows with user-centered design and measurable results?
-        </Typography>
-        <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ justifyContent: 'center' }}>
-          <Button component={Link} href="/contact" variant="contained">Book 30-min Call</Button>
-          <Button component={Link} href="/contact" variant="outlined" color="secondary">Get in Touch</Button>
-        </Stack>
-      </Box>
-    </Container>
-  );
+{
+  "slug": "fortutide",
+  "title": "Fortitude — Internal Recruiting Platform",
+  "domain": "Proprietary Internal Tool",
+  "role": "UX & Product Design Manager",
+  "goal": "Streamline requisition → pipeline → offer and increase recruiter effectiveness.",
+  "kpis": [
+    { "label": "Time-to-Hire Reduction", "value": "45–52%" },
+    { "label": "SLA Adherence", "value": "78–85%" },
+    { "label": "Interview No-Shows", "value": "↓ 35–40%" },
+    { "label": "Pipeline Throughput", "value": "↑ 60–70%" }
+  ],
+  "summary": "Comprehensive redesign of enterprise recruiting workflow, reducing time-to-hire while improving SLA adherence and candidate experience across complex organizational structures.",
+  "roleScope": {
+    "scope": "Service design, workflow redesign, design system, research/testing",
+    "team": "4 designers, 2 researchers, 8 developers",
+    "timeframe": "Q2/2023 – Q4/2023"
+  },
+  "goalConstraints": "Shorten requisition → pipeline → offer cycle time and clarify ownership while honoring privacy/security constraints on candidate data and maintaining compliance with enterprise security protocols.",
+  "led": [
+    {
+      "title": "Org & Operations",
+      "items": [
+        "Client acquisition strategy",
+        "Proposal development & budgeting",
+        "Product roadmap planning",
+        "Resource allocation & management",
+        "Risk assessment & mitigation"
+      ]
+    },
+    {
+      "title": "Research & Insights",
+      "items": [
+        "Recruiter/manager/candidate interviews",
+        "Workflow shadowing sessions",
+        "Time-to-hire analysis",
+        "Drop-off pattern identification",
+        "Behavioral insights synthesis"
+      ]
+    },
+    {
+      "title": "Product & IA",
+      "items": [
+        "Stage definition framework",
+        "SLA matrix development",
+        "Role-based pipeline architecture",
+        "Structured requisition intake",
+        "Decision flow optimization"
+      ]
+    },
+    {
+      "title": "Design & Systems",
+      "items": [
+        "Low/high-fidelity user flows",
+        "Scheduling assistant interface",
+        "Readiness indicator system",
+        "Design system tokens/components",
+        "Accessibility compliance"
+      ]
+    },
+    {
+      "title": "Delivery & Quality",
+      "items": [
+        "Usability testing program",
+        "Acceptance criteria definition",
+        "Development handoff protocols",
+        "QA process optimization",
+        "Release quality metrics"
+      ]
+    },
+    {
+      "title": "Stakeholders & Decisions",
+      "items": [
+        "Cross-functional review facilitation",
+        "Signal-driven prioritization",
+        "Candidate strength assessment",
+        "SLA timer management",
+        "Role urgency evaluation"
+      ]
+    }
+  ],
+  "research": {
+    "cards": [
+      {
+        "title": "Research Plan",
+        "meta": "Interviews, shadowing, metrics",
+        "body": "Roll-up of roles, questions, and measures.\nOps notes: Comprehensive stakeholder analysis across 15 departments"
+      },
+      {
+        "title": "Funnel Analysis",
+        "meta": "Drop-offs by stage",
+        "body": "Pinpointed bottlenecks for prioritization.\nData source: 18-month historical recruiting data analysis"
+      }
+    ],
+    "insights": [
+      {
+        "title": "Critical Bottlenecks",
+        "body": "65% of delays occurred in interview scheduling and feedback collection phases"
+      },
+      {
+        "title": "Role Confusion",
+        "body": "Unclear ownership at stage transitions led to 40% of process stalls"
+      },
+      {
+        "title": "Timing Issues",
+        "body": "Average 8.5 days between interview rounds due to coordination failures"
+      }
+    ]
+  },
+  "workflow": {
+    "intro": "We codified \"what's next\" by role, standardized stage gates, and added signal-based prioritization (candidate strength, SLA timers, role urgency).",
+    "cards": [
+      {
+        "title": "Stage Definitions + SLA Matrix",
+        "body": "Ownership and timers.\nShared expectations reduce handoffs and stalls.\nReview cadence: Weekly cross-functional alignment meetings"
+      },
+      {
+        "title": "Stage Gates / Ownership / Timers / Signals",
+        "body": "Clear entry/exit criteria; defined responsibilities for recruiters and hiring managers; automated SLA alerts; dynamic prioritization."
+      }
+    ]
+  },
+  "ia": {
+    "intro": "Pipeline views are tailored to recruiters and hiring managers; intake is structured for completeness; the offer path is auditable.",
+    "blocks": [
+      {
+        "title": "Recruiter View",
+        "items": [
+          "Candidate pipeline overview",
+          "Scheduling management",
+          "Interview coordination",
+          "Status tracking dashboard",
+          "Performance metrics"
+        ]
+      },
+      {
+        "title": "Hiring Manager View",
+        "items": [
+          "Role-specific candidates",
+          "Interview feedback forms",
+          "Decision workflows",
+          "Team collaboration tools",
+          "Approval processes"
+        ]
+      },
+      {
+        "title": "Admin Controls",
+        "items": [
+          "System configuration",
+          "User permissions",
+          "Audit trails",
+          "Compliance monitoring",
+          "Reporting dashboard"
+        ]
+      }
+    ]
+  },
+  "prototypes": [
+    {
+      "title": "Scheduling Assistant (Lo-Fi)",
+      "body": "Resolve calendar conflicts; fewer no-shows; smoother coordination.\nUsability notes: 85% task completion rate in initial testing"
+    },
+    {
+      "title": "Pipeline (Hi-Fi)",
+      "body": "Stages, signals, actions. Signals drive prioritization and decisions.\nToken reference: Design system v2.1 implementation"
+    },
+    {
+      "title": "Accessibility First",
+      "body": "WCAG 2.1 AA with keyboard navigation and screen reader support"
+    }
+  ],
+  "ops": [
+    {
+      "title": "Acceptance Criteria Snapshot",
+      "body": "Definition of done.\nLimits rework and elevates release quality.\nGate owners: Cross-functional review team with defined approval authority"
+    },
+    {
+      "title": "Quality Gates / Iterative Testing / Metrics / Alignment",
+      "body": "Rigorous checkpoints at each milestone; weekly usability sessions; real-time performance monitoring; bi-weekly decision reviews with executive stakeholders."
+    }
+  ],
+  "outcomes": {
+    "metrics": [
+      { "label": "Time-to-Hire Reduction", "value": "45–52%", "note": "From 28 to 14 average days" },
+      { "label": "SLA Adherence", "value": "78–85%", "note": "Up from 45% baseline" },
+      { "label": "Interview No-Shows", "value": "↓ 35–40%", "note": "Reduced scheduling conflicts" },
+      { "label": "Pipeline Throughput", "value": "↑ 60–70%", "note": "Increased efficiency gains" }
+    ],
+    "secondary": [
+      "User Satisfaction Score 92%",
+      "$2.3M Annual Cost Savings",
+      "15hrs Weekly Time Savings per Recruiter"
+    ]
+  },
+  "artifacts": {
+    "groups": [
+      {
+        "title": "Research Artifacts",
+        "items": [
+          "Research plan documentation",
+          "Funnel analysis charts",
+          "User interview transcripts",
+          "Behavioral insights synthesis"
+        ]
+      },
+      {
+        "title": "Design Artifacts",
+        "items": [
+          "Stage/SLA matrix definitions",
+          "Pipeline information architecture",
+          "Lo-fi scheduling wireframes",
+          "Hi-fi pipeline interfaces"
+        ]
+      },
+      {
+        "title": "Implementation Artifacts",
+        "items": [
+          "Acceptance criteria checklists",
+          "Quality assurance protocols",
+          "Design system tokens",
+          "Development handoff specs"
+        ]
+      }
+    ],
+    "downloads": [
+      { "label": "fort_specs_redacted_v1.pdf", "href": "#" },
+      { "label": "fort_design-system_tokens_v1.zip", "href": "#" }
+    ],
+    "note": "Redacted for portfolio — full documentation available upon request"
+  },
+  "related": [
+    {
+      "slug": "ngamow",
+      "title": "NGA — Map of the World",
+      "highlights": ["Task Success Rate ↑ 35–42%", "Onboarding Time ↓ 60–70%"]
+    },
+    {
+      "slug": "bluerock",
+      "title": "BlueRock — Brand & Web",
+      "highlights": ["Qualified Leads ↑ 120–140%", "Bounce Rate ↓ 35–42%"]
+    }
+  ]
 }
