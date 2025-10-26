@@ -2,7 +2,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-// Your repo root already has /content at the top level
 const contentDir = path.join(process.cwd(), 'content');
 
 function readJSON<T>(...segments: string[]): T {
@@ -46,13 +45,18 @@ export type ResumeData = {
 export async function getAllWork(): Promise<WorkItem[]> {
   const dir = path.join(contentDir, 'work');
   const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
-  return files.map((f) => readJSON<WorkItem>('work', f));
+  return files.map((f) => {
+    const raw = readJSON<Omit<WorkItem, 'slug'>>('work', f);
+    const slug = f.replace(/\.json$/, '');
+    return { slug, ...raw };
+  });
 }
 
 export async function getWorkBySlug(slug: string): Promise<WorkItem | null> {
   const p = path.join(contentDir, 'work', `${slug}.json`);
   if (!fs.existsSync(p)) return null;
-  return readJSON<WorkItem>('work', `${slug}.json`);
+  const raw = readJSON<Omit<WorkItem, 'slug'>>('work', `${slug}.json`);
+  return { slug, ...raw };
 }
 
 export async function getResume(): Promise<ResumeData> {
