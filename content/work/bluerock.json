@@ -4,22 +4,70 @@
   "domain": "Consulting / Marketing Site",
   "role": "UX & Content Design",
   "goal": "Clarify positioning and proof; convert interest into qualified conversations.",
-  "kpis": ["Qualified leads ↑ ~X–Y%", "Bounce ↓ ~X–Y%"],
+  "kpis": ["Qualified leads ↑ ~X–Y%", "Bounce ↓ ~X–Y%", "LCP ≤ Xs", "A11y conformance AA/AAA"],
   "summary": "Messaging framework (value props, services, proof points), credibility-scannable IA, lightweight design system, performance & accessibility targets, lead-flow map.",
   "sections": [
     {
-      "id": "lead",
-      "title": "What I Led",
-      "body": "• Client engagement, staffing, budget, proposal.\n• Heuristics evaluation, competitive/gap analysis, UX writing, system governance; dev management to delivery."
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: UX & Content Design\nDomain: B2B Services, Marketing\nScope: Messaging, IA, design system, research, copy, lead flow\nTeam: [X designers/content, Y devs]\nTimeframe: [Q#/Year – Q#/Year]"
     },
     {
-      "id": "impact",
-      "title": "Outcomes",
-      "body": "Cleaner narrative, stronger proof density, higher-quality lead capture.",
+      "id": "goal-constraints",
+      "title": "Goal & Constraints",
+      "body": "Clarify positioning and surface credible proof while keeping the site lean; guide visitors to a structured contact pathway that qualifies leads."
+    },
+    {
+      "id": "what-i-led",
+      "title": "What I Led",
+      "body": "• Org & Ops — Engagement kickoff, staffing, budget, plan; parallel brand + web tracks.\n• Research & Insights — Stakeholder interviews; heuristics evaluation; competitor and gap analysis.\n• Product & IA — Messaging framework; credibility-first IA (Who / What / Proof / Start).\n• Design & Systems — Component library; performance/a11y-targeted templates; content writing and editing.\n• Delivery & Quality — Lead-flow (scheduler + structured intake); QA and launch checklist.\n• Stakeholders & Decisions — Executive reviews; copy approvals; performance/a11y sign-offs."
+    },
+    {
+      "id": "research",
+      "title": "Research & Discovery",
+      "body": "We captured leadership’s value propositions, audited the current site, and mapped competitor signals to ensure proof density where buyers look first.",
       "artifacts": [
-        { "type": "Messaging playbook", "caption": "Value props & proof map", "alt": "Messaging playbook" },
-        { "type": "Lead-flow", "caption": "Calendar + structured intake", "alt": "Lead-flow diagram" }
+        { "type": "Heuristics + competitor summary", "caption": "Where proof must show up", "alt": "Comparison grid", "src": "blue_heuristics_competitor_v1.png" }
       ]
+    },
+    {
+      "id": "mental-models",
+      "title": "Mental Models → Messaging & IA",
+      "body": "We mapped how buyers scan: What you do → Proof → How to start, then structured IA so those answers are always within one scroll.",
+      "artifacts": [
+        { "type": "Messaging framework", "caption": "Value props, outcomes, proof", "alt": "Messaging map", "src": "blue_messaging_framework_v1.png" },
+        { "type": "Sitemap", "caption": "Credibility-first structure", "alt": "IA sitemap", "src": "blue_ia_sitemap_v1.png" }
+      ]
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture",
+      "body": "Services and outcomes are explicit; case evidence and bios are anchored to decision points; navigation trims friction to the contact flow.",
+      "artifacts": [
+        { "type": "Content map", "caption": "Proof anchors by page", "alt": "Content map diagram", "src": "blue_content_map_v1.png" }
+      ]
+    },
+    {
+      "id": "prototypes",
+      "title": "Prototypes (Lo-Fi → Hi-Fi)",
+      "body": "Hi-fi pages for Home, Services, Case Studies, and Contact, plus a lead-flow with scheduler and structured intake to reduce ping-pong.",
+      "artifacts": [
+        { "type": "Home (hi-fi)", "caption": "Narrative + proof density", "alt": "Home page mock", "src": "blue_hifi_home_v2.png" },
+        { "type": "Lead-flow", "caption": "Scheduler + structured intake", "alt": "Lead-flow diagram", "src": "blue_leadflow_diagram_v1.png" }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operating Mechanisms",
+      "body": "Copy rules, component governance, and a compact scorecard for qualified-lead capture and page performance keep the site improving without bloat.",
+      "artifacts": [
+        { "type": "Scorecard", "caption": "Leads + performance", "alt": "Scorecard tiles", "src": "blue_scorecard_v1.png" }
+      ]
+    },
+    {
+      "id": "outcomes",
+      "title": "Outcomes",
+      "body": "Clearer narrative, denser proof, higher-quality lead capture, improved performance and accessibility.\nRanges: Qualified leads [↑ ~X–Y%] · Bounce [↓ ~X–Y%] · LCP [≤ Xs]"
     }
   ],
   "downloads": [
