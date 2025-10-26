@@ -1,0 +1,41 @@
+{
+  "slug": "socom-branding",
+  "title": "USSOCOM \u2014 Brand System + App Marketplace & Dashboard Concepts",
+  "domain": "Identity & Enterprise Concepts",
+  "role": "Creative Direction & UX Strategy",
+  "goal": "Deliver compliant, legible, and extensible identity; explore developer-centric marketplace and personalized dashboards.",
+  "kpis": [
+    "Reproduction consistency \u2191 [placeholder]",
+    "Onboarding friction \u2193 [placeholder]"
+  ],
+  "summary": "Identity refresh under strict standards; vector masters and spec sheets. Concepted app marketplace and user dashboard that centralize tools, access, and knowledge.",
+  "sections": [
+    {
+      "id": "identity",
+      "title": "Identity System",
+      "body": "Standards audit (color/contrast, reproduction); lockups; digital/print specs; export profiles."
+    },
+    {
+      "id": "concepts",
+      "title": "Marketplace & Dashboard Concepts",
+      "body": "Developer-forward \u2018one-stop\u2019 experience: app store, access checks, knowledge sharing, support, and personalized workspaces."
+    },
+    {
+      "id": "deliverables",
+      "title": "Artifacts",
+      "body": "Standards spec, vector masters, export kit; concept screens for marketplace and dashboards.",
+      "artifacts": [
+        {
+          "type": "Brand spec",
+          "caption": "Lockups, color, reproduction",
+          "alt": "Brand spec"
+        },
+        {
+          "type": "Concept screens",
+          "caption": "Marketplace & dashboard",
+          "alt": "Concept screens"
+        }
+      ]
+    }
+  ]
+}

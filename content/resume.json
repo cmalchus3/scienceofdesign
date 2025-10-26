@@ -1,0 +1,83 @@
+{
+  "header": {
+    "name": "Christina Alchus",
+    "title": "UX & Digital Strategy Executive",
+    "location": "Ashburn, VA",
+    "phone": "571-260-3164",
+    "email": "christina@scienceofdesign.io",
+    "links": [
+      {
+        "label": "Portfolio",
+        "url": "https://scienceofdesign.io/portfolio"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/christina-alchus"
+      }
+    ]
+  },
+  "summary": "Visionary UX executive with 15+ years leading digital transformation, product design, and UX strategy across enterprise-scale platforms. Proven success aligning user-centered design with product goals, implementing scalable design systems, and driving data-informed prioritization in Agile/DevSecOps environments. Leader of high-performing teams in complex, secure contexts.",
+  "strengths": [
+    "UX & Product Strategy Alignment",
+    "Cross-Functional Team Leadership",
+    "DevOps Feedback Loops & Governance",
+    "Scalable Design Systems & HCD",
+    "AI-Ready UX & Workflow Automation",
+    "Remote Team Building & SOPs",
+    "Accessibility (508) & Inclusive Design"
+  ],
+  "experience": [
+    {
+      "title": "Senior UX Engineer",
+      "org": "Omni Federal \u2014 Herndon, VA",
+      "dates": "2025\u2013Current",
+      "bullets": [
+        "Modernizing NGA\u2019s MoW platform; aligning UX with platform outcomes.",
+        "Established UX\u2192DevOps feedback loop; prioritization schema."
+      ]
+    },
+    {
+      "title": "Founder & UX Director",
+      "org": "Pixel Creative Services \u2014 Ashburn, VA",
+      "dates": "2017\u20132024",
+      "bullets": [
+        "Led consultancy for enterprise product strategy, design systems, and transformation.",
+        "Managed $5M+ in subcontracts; built distributed team; instituted governance."
+      ]
+    },
+    {
+      "title": "Lead UX Strategist (Subcontracts)",
+      "org": "USSOCOM & NGA via Pixel",
+      "dates": "2017\u20132022",
+      "bullets": [
+        "Led platform transformations; executive dashboards and KPI-aligned metrics.",
+        "Built feedback loops and release planning to accelerate adoption."
+      ]
+    },
+    {
+      "title": "Lead UX Engineer",
+      "org": "Adwaiy Tech LLC \u2013 CIA (Contract)",
+      "dates": "2015\u20132016",
+      "bullets": [
+        "Modernized UI for legacy apps; accessibility audits; component libraries."
+      ]
+    },
+    {
+      "title": "Senior UX Strategist",
+      "org": "INCATech \u2013 U.S. Department of State",
+      "dates": "2014",
+      "bullets": [
+        "Directed Travel.State.gov redesign with measurable accessibility gains."
+      ]
+    }
+  ],
+  "certs": [
+    "NN/g UX Management",
+    "SAFe Agile",
+    "Section 508 Compliance",
+    "Design Thinking Facilitation"
+  ],
+  "education": [
+    "B.S. Psychology, University of Maryland"
+  ]
+}

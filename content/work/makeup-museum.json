@@ -1,0 +1,41 @@
+{
+  "slug": "makeup-museum",
+  "title": "Makeup Museum \u2014 Content & Inventory System Modernization",
+  "domain": "Cultural / CMS",
+  "role": "UX & Product Design (platform re-architecture + branding refresh)",
+  "goal": "Unify CMS, inventory, and storytelling to support exhibits and e-commerce expansion.",
+  "kpis": [
+    "Publishing errors \u2193 [placeholder]",
+    "Time-to-publish \u2193 [placeholder]"
+  ],
+  "summary": "Object-based content model, reusable templates, editorial workflow (roles/permissions, publish gates), asset standards, and brand refinements.",
+  "sections": [
+    {
+      "id": "approach",
+      "title": "Approach",
+      "body": "Defined object model; IA; editorial workflow with publish gates; asset standards; brand refresh to support commerce."
+    },
+    {
+      "id": "lead",
+      "title": "What I Led",
+      "body": "\u2022 Client acquisition, scope/budget/timeline; technical feasibility and stack choices.\\n\u2022 IA and inventory design; design quality control; design + build supervision."
+    },
+    {
+      "id": "outcomes",
+      "title": "Outcomes",
+      "body": "Faster story assembly from collection objects, fewer publishing errors, brand-consistent pages, commerce-ready.",
+      "artifacts": [
+        {
+          "type": "Content model",
+          "caption": "Schemas for objects and relations",
+          "alt": "Content model"
+        },
+        {
+          "type": "Templates",
+          "caption": "Reusable landing/story templates",
+          "alt": "Templates"
+        }
+      ]
+    }
+  ]
+}

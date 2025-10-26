@@ -1,0 +1,41 @@
+{
+  "slug": "ngamow",
+  "title": "NGA \u2014 Map of the World (MoW) Modernization",
+  "domain": "Enterprise Geospatial",
+  "role": "Senior UX Engineer (manager-level scope)",
+  "goal": "Align UX strategy with platform outcomes; provide artifacts that accelerate delivery.",
+  "kpis": [
+    "Task success \u2191 [placeholder]",
+    "Training time \u2193 [placeholder]"
+  ],
+  "summary": "Reimagined task flows, architecture, onboarding, and admin configuration to reduce friction and improve decision speed in a complex multi-team platform.",
+  "sections": [
+    {
+      "id": "scope",
+      "title": "Context & Scope",
+      "body": "Enterprise geospatial platform with cross-team dependencies and modernization goals. Led wireframes/flows for core tasks (desktop/mobile, admin/user surfaces), set UX\u2192DevOps feedback path, and introduced a scalable prioritization schema."
+    },
+    {
+      "id": "leadership",
+      "title": "What I Led",
+      "body": "\u2022 Designed centralized feedback loop routing user signals to engineering.\\n\u2022 Authored data calls and questionnaires for meaningful, actionable insight.\\n\u2022 Created onboarding wizard and admin theming to focus workspaces on the next workflow.\\n\u2022 Facilitated leadership workshops; introduced outcome scorecards for priority alignment."
+    },
+    {
+      "id": "results",
+      "title": "Results",
+      "body": "Clearer task pathways and faster alignment on priorities; improved readiness for implementation.",
+      "artifacts": [
+        {
+          "type": "Wireframes",
+          "caption": "Core task flows and admin controls",
+          "alt": "Wireframes overview"
+        },
+        {
+          "type": "Decision schema",
+          "caption": "Prioritization/scorecard model",
+          "alt": "Decision schema"
+        }
+      ]
+    }
+  ]
+}

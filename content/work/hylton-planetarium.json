@@ -1,0 +1,41 @@
+{
+  "slug": "hylton-planetarium",
+  "title": "Hylton Planetarium \u2014 Service Modernization",
+  "domain": "Education / Public Program",
+  "role": "UX & Digital Strategy (Engagement Lead)",
+  "goal": "Increase program reach and operational clarity for educators, parents, and patrons.",
+  "kpis": [
+    "Discoverability \u2191 [placeholder]",
+    "Booking back-and-forth \u2193 [placeholder]"
+  ],
+  "summary": "Service design + brand refresh + booking-friendly IA for a county planetarium serving educators and the public.",
+  "sections": [
+    {
+      "id": "approach",
+      "title": "Approach",
+      "body": "Service design across educator/patron journeys; task-first IA (Programs, Booking, Educator Resources, Community Events); accessible component library; scheduling flow."
+    },
+    {
+      "id": "management",
+      "title": "What I Led",
+      "body": "\u2022 Intake/pricing/scope; staffing and vendor management.\\n\u2022 Stakeholder sessions; research plan; heuristic evaluation.\\n\u2022 Supervised low\u2192high fidelity design and final website delivery; brand guidelines; photography oversight.\\n\u2022 QA and content; ensured WCAG/508 compliance."
+    },
+    {
+      "id": "outcomes",
+      "title": "Outcomes",
+      "body": "Higher program discoverability, faster booking decisions, consistent brand across print and digital.",
+      "artifacts": [
+        {
+          "type": "Service blueprint",
+          "caption": "Educator/patron blueprint",
+          "alt": "Service blueprint"
+        },
+        {
+          "type": "Booking flow",
+          "caption": "Task-first scheduling",
+          "alt": "Booking flow"
+        }
+      ]
+    }
+  ]
+}

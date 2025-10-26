@@ -1,0 +1,36 @@
+{
+  "slug": "fortutide",
+  "title": "Fortutide \u2014 Internal Recruiting Platform",
+  "domain": "Internal Tools / B2B",
+  "role": "UX & Product Design Manager",
+  "goal": "Streamline requisition\u2192pipeline\u2192offer and increase recruiter effectiveness.",
+  "kpis": [
+    "Time-to-hire \u2193 [placeholder]",
+    "SLA adherence \u2191 [placeholder]"
+  ],
+  "summary": "Journey mapping for recruiter, hiring manager, and candidate; stage definitions; interview scheduling; decision support cues.",
+  "sections": [
+    {
+      "id": "lead",
+      "title": "What I Led",
+      "body": "\u2022 Client acquisition and scope; project/product management; budget and milestones.\\n\u2022 Service design; user interviews/testing; design systems; dev handoff and QA."
+    },
+    {
+      "id": "impact",
+      "title": "Outcomes",
+      "body": "Shorter cycle time from requisition to decision, clearer stage ownership, better recruiter\u2194hiring manager collaboration.",
+      "artifacts": [
+        {
+          "type": "Workflow maps",
+          "caption": "Stage ownership and SLAs",
+          "alt": "Workflow maps"
+        },
+        {
+          "type": "UI flows",
+          "caption": "Scheduling and decision cues",
+          "alt": "UI flows"
+        }
+      ]
+    }
+  ]
+}
