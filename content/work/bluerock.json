@@ -1,36 +1,29 @@
 {
   "slug": "bluerock",
-  "title": "BlueRock Consulting \u2014 Brand & Website Modernization",
+  "title": "BlueRock Consulting — Brand & Website Modernization",
   "domain": "Consulting / Marketing Site",
   "role": "UX & Content Design",
   "goal": "Clarify positioning and proof; convert interest into qualified conversations.",
-  "kpis": [
-    "Qualified leads \u2191 [placeholder]",
-    "Bounce \u2193 [placeholder]"
-  ],
+  "kpis": ["Qualified leads ↑ ~X–Y%", "Bounce ↓ ~X–Y%"],
   "summary": "Messaging framework (value props, services, proof points), credibility-scannable IA, lightweight design system, performance & accessibility targets, lead-flow map.",
   "sections": [
     {
       "id": "lead",
       "title": "What I Led",
-      "body": "\u2022 Client engagement, staffing, budget, proposal.\\n\u2022 Heuristics evaluation, competitive/gap analysis, UX writing, system governance; dev management to delivery."
+      "body": "• Client engagement, staffing, budget, proposal.\n• Heuristics evaluation, competitive/gap analysis, UX writing, system governance; dev management to delivery."
     },
     {
       "id": "impact",
       "title": "Outcomes",
       "body": "Cleaner narrative, stronger proof density, higher-quality lead capture.",
       "artifacts": [
-        {
-          "type": "Messaging playbook",
-          "caption": "Value props & proof map",
-          "alt": "Messaging playbook"
-        },
-        {
-          "type": "Lead-flow",
-          "caption": "Calendar + structured intake",
-          "alt": "Lead-flow diagram"
-        }
+        { "type": "Messaging playbook", "caption": "Value props & proof map", "alt": "Messaging playbook" },
+        { "type": "Lead-flow", "caption": "Calendar + structured intake", "alt": "Lead-flow diagram" }
       ]
     }
+  ],
+  "downloads": [
+    { "label": "Copy deck (redacted)", "file": "blue_copydeck_v1.pdf" },
+    { "label": "Component kit", "file": "blue_components_v1.zip" }
   ]
 }
