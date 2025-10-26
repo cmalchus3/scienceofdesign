@@ -1,41 +1,78 @@
 {
-  "slug": "hylton-planetarium",
-  "title": "Hylton Planetarium \u2014 Service Modernization",
+  "slug": "hylton",
+  "title": "Hylton Planetarium — Service Modernization",
   "domain": "Education / Public Program",
-  "role": "UX & Digital Strategy (Engagement Lead)",
+  "role": "UX & Digital Strategy (engagement lead)",
   "goal": "Increase program reach and operational clarity for educators, parents, and patrons.",
-  "kpis": [
-    "Discoverability \u2191 [placeholder]",
-    "Booking back-and-forth \u2193 [placeholder]"
-  ],
+  "kpis": ["Booking completion ↑ ~X–Y%", "Inquiry volume ↓ ~X–Y%", "Support emails ↓ ~X–Y%", "Mobile task success ↑ ~X–Y%"],
   "summary": "Service design + brand refresh + booking-friendly IA for a county planetarium serving educators and the public.",
   "sections": [
     {
-      "id": "approach",
-      "title": "Approach",
-      "body": "Service design across educator/patron journeys; task-first IA (Programs, Booking, Educator Resources, Community Events); accessible component library; scheduling flow."
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: UX & Digital Strategy (engagement lead)\nDomain: Education, Public Services\nScope: Service design, brand refresh, web experience, booking flow\nTeam: [X designers, Y engineers, Z content/photography]\nTimeframe: [Q#/Year – Q#/Year]"
     },
     {
-      "id": "management",
+      "id": "goal-constraints",
+      "title": "Goal & Constraints",
+      "body": "Unify how educators and patrons discover programs, understand availability, and book—within school policies, seasonal demand spikes, and limited staff capacity."
+    },
+    {
+      "id": "what-i-led",
       "title": "What I Led",
-      "body": "\u2022 Intake/pricing/scope; staffing and vendor management.\\n\u2022 Stakeholder sessions; research plan; heuristic evaluation.\\n\u2022 Supervised low\u2192high fidelity design and final website delivery; brand guidelines; photography oversight.\\n\u2022 QA and content; ensured WCAG/508 compliance."
+      "body": "• Org & Ops — Pricing, budget, proposal; team hiring; timeline; governance; approval checkpoints.\n• Research & Insights — Educator/patron interviews; heuristics review; content audit; peer venue scan.\n• Product & IA — Service model; task-first IA (Programs, Booking, Educator Resources, Community Events).\n• Design & Systems — Brand refresh; photography direction/editing; component library; mobile/desktop booking; content writing.\n• Delivery & Quality — Accessibility/508; heuristics QA; release readiness; final sign-off.\n• Stakeholders & Decisions — Educator/staff workshops; decision reviews; monthly metric check-ins."
+    },
+    {
+      "id": "research",
+      "title": "Research & Discovery",
+      "body": "We spoke with educators and front-office staff, reviewed the current experience with a heuristics checklist, inventoried content and schedules, and scanned comparable venues to calibrate expectations for booking and field-trip planning.",
+      "artifacts": [
+        { "type": "Interview guide (excerpt)", "caption": "Key questions and decision criteria", "alt": "One-page interview guide with educator questions", "src": "hylton_research_interview-guide_v1.png" },
+        { "type": "Heuristics report (summary)", "caption": "Top five issues prioritized by impact on booking completion", "alt": "Heuristic findings summary", "src": "hylton_heuristics_summary_v1.png" }
+      ]
+    },
+    {
+      "id": "mental-models",
+      "title": "Mental Models → IA",
+      "body": "We grouped tasks by audience intent (find a show, book, plan a field trip, teacher resources) and validated labels with a lightweight card sort. These inputs defined a four-pillar IA: Programs, Booking, Educator Resources, Community Events.",
+      "artifacts": [
+        { "type": "Mental model clusters", "caption": "Audience intents and expectations", "alt": "Cluster map of educator/public intents", "src": "hylton_mental-models_clusters_v1.png" },
+        { "type": "IA sitemap", "caption": "Programs, Booking, Educator Resources, Community Events", "alt": "Sitemap with four pillars", "src": "hylton_ia_sitemap_v2.png" }
+      ]
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture",
+      "body": "Program pages follow a consistent “What / When / How to Attend” template. Calendars consolidate capacity hints and seasonal events. The IA trims dead-end pages and reduces pogo-sticking for availability.",
+      "artifacts": [
+        { "type": "Program page template", "caption": "Task cues for booking", "alt": "Program template with clear CTA and details", "src": "hylton_template_program_v1.png" }
+      ]
+    },
+    {
+      "id": "prototypes",
+      "title": "Prototypes (Lo-Fi → Hi-Fi)",
+      "body": "We validated low-fidelity flows for discovery → booking → confirmation, then delivered high-fidelity screens for mobile and desktop with clear microcopy and a11y cues.",
+      "artifacts": [
+        { "type": "Lo-fi booking flow", "caption": "Steps from discovery to confirmation", "alt": "Wireframes of booking steps", "src": "hylton_lofi_booking-flow_v1.png" },
+        { "type": "Hi-fi booking screens", "caption": "Mobile-first booking interface", "alt": "Mobile booking screens with calendar", "src": "hylton_hifi_booking-mobile_v2.png" }
+      ]
+    },
+    {
+      "id": "ops",
+      "title": "Operating Mechanisms",
+      "body": "We installed a11y/quality gates, a content style guide, and a monthly measurement loop to track booking completion, email volume, and page findability; results informed quick follow-ups rather than rework sprints.",
+      "artifacts": [
+        { "type": "KPI scorecard (sample)", "caption": "Monthly signals", "alt": "Scorecard tiles for bookings/emails/findability", "src": "hylton_kpi_scorecard_v1.png" }
+      ]
     },
     {
       "id": "outcomes",
       "title": "Outcomes",
-      "body": "Higher program discoverability, faster booking decisions, consistent brand across print and digital.",
-      "artifacts": [
-        {
-          "type": "Service blueprint",
-          "caption": "Educator/patron blueprint",
-          "alt": "Service blueprint"
-        },
-        {
-          "type": "Booking flow",
-          "caption": "Task-first scheduling",
-          "alt": "Booking flow"
-        }
-      ]
+      "body": "Discoverability improved, booking decisions happened faster, support emails declined, and the brand presented consistently across print and digital.\nRanges: Booking completion [↑ ~X–Y%] · Support emails [↓ ~X–Y%] · Mobile success [↑ ~X–Y%]"
     }
+  ],
+  "downloads": [
+    { "label": "Booking specs (redacted)", "file": "hylton_booking-specs_redacted_v1.pdf" },
+    { "label": "Component kit", "file": "hylton_components_v1.zip" }
   ]
 }
