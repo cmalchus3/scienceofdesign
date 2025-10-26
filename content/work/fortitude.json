@@ -1,28 +1,17 @@
 {
   "slug": "fortitude",
-  "title": "Fortitude — Internal Recruiting Platform (Proprietary)",
+  "title": "Fortitude — Internal Recruiting Platform",
   "domain": "Talent Operations / Internal Tools",
   "role": "UX & Product Design Manager",
-  "goal": "Shorten requisition → pipeline → offer cycle time and clarify ownership while honoring privacy/security constraints on candidate data.",
-  "kpis": [
-    "Time-to-hire ↓ ~X–Y%",
-    "Stage SLA adherence ↑ ~X–Y%",
-    "Interview no-shows ↓ ~X–Y%",
-    "Pipeline throughput ↑ ~X–Y%"
-  ],
-  "summary": "End-to-end redesign of recruiting workflows, stage definitions, SLA matrix, and role-based pipeline. Introduced scheduling assistant, readiness indicators, and a small design system to reduce cycle time and increase clarity.",
-  "overview": {
-    "domain": "Talent Operations, Internal Tools",
-    "scope": "Service design, workflow redesign, design system, research/testing",
-    "team": "[X designers, Y researchers, Z devs]",
-    "timeframe": "[Q#/Year – Q#/Year]",
-    "notes": ""
-  },
-  "downloads": [
-    { "label": "Specs (redacted)", "file": "fort_specs_redacted_v1.pdf" },
-    { "label": "Design-system tokens", "file": "fort_design-system_tokens_v1.zip" }
-  ],
+  "goal": "Streamline requisition→pipeline→offer and increase recruiter effectiveness.",
+  "kpis": ["Time-to-hire ↓ ~X–Y%", "SLA adherence ↑ ~X–Y%", "No-shows ↓ ~X–Y%", "Pipeline throughput ↑ ~X–Y%"],
+  "summary": "Journey mapping for recruiter, hiring manager, and candidate; stage definitions; interview scheduling; decision support cues and SLA timers.",
   "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "body": "Role: UX & Product Design Manager\nDomain: Talent Operations, Internal Tools\nScope: Service design, workflow redesign, design system, research/testing\nTeam: [X designers, Y researchers, Z devs]\nTimeframe: [Q#/Year – Q#/Year]"
+    },
     {
       "id": "goal-constraints",
       "title": "Goal & Constraints",
@@ -31,27 +20,15 @@
     {
       "id": "what-i-led",
       "title": "What I Led",
-      "body": "Org & Ops — Client acquisition; proposal/budget; roadmap; resourcing; risk management.\nResearch & Insights — Recruiter/manager/candidate interviews; shadowing; time-to-hire & drop-off analysis.\nProduct & IA — Stage definitions; SLA matrix; role-based pipeline IA; structured requisition intake.\nDesign & Systems — Low/hi-fi flows; scheduling assistant; readiness indicators; design-system tokens/components.\nDelivery & Quality — Usability testing program; acceptance criteria; dev handoff & QA.\nStakeholders & Decisions — Cross-functional reviews; prioritization driven by signals (candidate strength, SLA timers, role urgency)."
+      "body": "• Org & Ops — Client acquisition; proposal/budget; roadmap; resourcing; risk management.\n• Research & Insights — Recruiter/manager/candidate interviews; shadowing; time-to-hire & drop-off analysis.\n• Product & IA — Stage definitions; SLA matrix; role-based pipeline IA; structured requisition intake.\n• Design & Systems — Low/hi-fi flows; scheduling assistant; readiness indicators; design-system tokens/components.\n• Delivery & Quality — Usability testing program; acceptance criteria; dev handoff & QA.\n• Stakeholders & Decisions — Cross-functional reviews; prioritization driven by signals (candidate strength, SLA timers, role urgency)."
     },
     {
-      "id": "research-discovery",
+      "id": "research",
       "title": "Research & Discovery",
       "body": "We mapped the current funnel, quantified where delays occurred, and captured role expectations to focus the redesign on scheduling and decision clarity.",
       "artifacts": [
-        {
-          "type": "Research plan",
-          "caption": "Interviews, shadowing, metrics",
-          "alt": "Research plan snapshot",
-          "src": "fort_research_plan_v1.png",
-          "footnote": "Ops notes."
-        },
-        {
-          "type": "Funnel analysis",
-          "caption": "Drop-offs by stage",
-          "alt": "Funnel chart",
-          "src": "fort_funnel_analysis_v1.png",
-          "footnote": "Data source."
-        }
+        { "type": "Research plan", "caption": "Interviews, shadowing, metrics", "alt": "Research plan snapshot", "src": "fort_research_plan_v1.png" },
+        { "type": "Funnel analysis", "caption": "Drop-offs by stage", "alt": "Funnel chart", "src": "fort_funnel_analysis_v1.png" }
       ]
     },
     {
@@ -59,27 +36,15 @@
       "title": "Mental Models → Workflow Redesign",
       "body": "We codified “what’s next” by role, standardized stage gates, and added signal-based prioritization (candidate strength, SLA timers, role urgency).",
       "artifacts": [
-        {
-          "type": "Stage definitions + SLA matrix",
-          "caption": "Ownership and timers",
-          "alt": "Stage/SLA table",
-          "src": "fort_stage-definitions_sla-matrix_v1.png",
-          "footnote": "Review cadence."
-        }
+        { "type": "Stage definitions + SLA matrix", "caption": "Ownership and timers", "alt": "Stage/SLA table", "src": "fort_stage-definitions_sla-matrix_v1.png" }
       ]
     },
     {
-      "id": "information-architecture",
+      "id": "ia",
       "title": "Information Architecture",
       "body": "Pipeline views are tailored to recruiters and hiring managers, intake is structured for completeness, and the offer path is auditable.",
       "artifacts": [
-        {
-          "type": "Role-based pipeline IA",
-          "caption": "Views and transitions",
-          "alt": "IA diagram",
-          "src": "fort_pipeline_ia_v1.png",
-          "footnote": "IA version."
-        }
+        { "type": "Role-based pipeline IA", "caption": "Views and transitions", "alt": "IA diagram", "src": "fort_pipeline_ia_v1.png" }
       ]
     },
     {
@@ -87,45 +52,26 @@
       "title": "Prototypes (Lo-Fi → Hi-Fi)",
       "body": "We delivered a scheduling assistant, SLA and readiness indicators, and task-focused flows; patterns emphasize accessibility and quick error recovery.",
       "artifacts": [
-        {
-          "type": "Scheduling assistant (lo-fi)",
-          "caption": "Resolve calendar conflicts",
-          "alt": "Wireframes of scheduling assistant",
-          "src": "fort_lofi_scheduling_v1.png",
-          "footnote": "Usability notes."
-        },
-        {
-          "type": "Pipeline (hi-fi)",
-          "caption": "Stages, signals, actions",
-          "alt": "Pipeline hi-fi screens",
-          "src": "fort_hifi_pipeline_v2.png",
-          "footnote": "Token reference."
-        }
+        { "type": "Scheduling assistant (lo-fi)", "caption": "Resolve calendar conflicts", "alt": "Wireframes of scheduling assistant", "src": "fort_lofi_scheduling_v1.png" },
+        { "type": "Pipeline (hi-fi)", "caption": "Stages, signals, actions", "alt": "Pipeline hi-fi screens", "src": "fort_hifi_pipeline_v2.png" }
       ]
     },
     {
-      "id": "operating-mechanisms",
+      "id": "ops",
       "title": "Operating Mechanisms",
       "body": "Stage/SLA matrix, acceptance criteria, recurring usability checks, and decision reviews keep delivery tied to outcomes rather than output.",
       "artifacts": [
-        {
-          "type": "Acceptance criteria snapshot",
-          "caption": "Definition of done",
-          "alt": "Acceptance criteria checklist",
-          "src": "fort_acceptance_criteria_v1.png",
-          "footnote": "Gate owners."
-        }
+        { "type": "Acceptance criteria snapshot", "caption": "Definition of done", "alt": "Acceptance criteria checklist", "src": "fort_acceptance_criteria_v1.png" }
       ]
     },
     {
       "id": "outcomes",
       "title": "Outcomes",
       "body": "Cycle time shortened; ownership by stage clarified; scheduling failures reduced; recruiter–manager collaboration strengthened.\nRanges: Time-to-hire [↓ ~X–Y%] · SLA adherence [↑ ~X–Y%] · No-shows [↓ ~X–Y%]"
-    },
-    {
-      "id": "all-artifacts",
-      "title": "All Artifacts (Gallery & Downloads)",
-      "body": "Research plan · Funnel chart · Stage/SLA matrix · Pipeline IA · Lo-fi scheduling · Hi-fi pipeline · Acceptance criteria"
     }
+  ],
+  "downloads": [
+    { "label": "Fortitude specs (redacted)", "file": "fort_specs_redacted_v1.pdf" },
+    { "label": "Design-system tokens", "file": "fort_design-system_tokens_v1.zip" }
   ]
 }
