@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "I align Product, Design, and Engineering to deliver the right outcomes under real constraints.",
+    "subhead": "UX & Product Design Manager focused on modernizing complex, secure, multi-product ecosystems with clear decision mechanisms and measurable results.",
+    "ctas": [
+      { "label": "View Selected Work", "href": "/work", "variant": "contained" },
+      { "label": "View Résumé", "href": "/resume", "variant": "outlined" }
+    ]
+  },
+  "metrics": [
+    { "label": "Adoption", "value": "↑ [placeholder]" },
+    { "label": "Time-to-value", "value": "↓ [placeholder]" },
+    { "label": "Ramp time", "value": "↓ [placeholder]" },
+    { "label": "Release quality", "value": "↑ [placeholder]" }
+  ],
+  "featuredWork": [
+    "ngamow",
+    "hylton-planetarium",
+    "makeup-museum",
+    "fortutide",
+    "bluerock",
+    "socom-branding"
+  ],
+  "process": [
+    { "name": "Discover", "desc": "Clarify goals, users, constraints, and operating realities. Install feedback loops that surface the right signals." },
+    { "name": "Design", "desc": "Architect flows and systems; make decisions visible with criteria, scorecards, and review gates." },
+    { "name": "Develop", "desc": "Partner with engineering; tighten UX→Dev handshakes, accessibility, and performance standards." },
+    { "name": "Deliver", "desc": "Measure outcomes; reduce rework; improve adoption and decision speed across products." }
+  ],
+  "footerCta": {
+    "title": "Discuss outcomes, not just artifacts.",
+    "sub": "If you’re modernizing a complex platform, I can help you align teams and decisions around measurable results.",
+    "primary": { "label": "Email Christina", "href": "mailto:christina@scienceofdesign.io" },
+    "secondary": { "label": "LinkedIn", "href": "https://linkedin.com/in/christina-alchus" }
+  }
+}
